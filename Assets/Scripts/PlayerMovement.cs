@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-    [SerializeField] float speed = 100f;
+    [SerializeField] float speed = 10f;
 
     private void Awake()
     {
@@ -24,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(Vector3 position)
     {
-        rb.MovePosition(position * speed * Time.fixedDeltaTime);
+        //transform.Translate(position * speed * Time.fixedDeltaTime);
+        transform.position += position * speed * Time.fixedDeltaTime;
     }
 
 }
