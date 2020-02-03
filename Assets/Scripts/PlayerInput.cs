@@ -23,16 +23,15 @@ public class PlayerInput : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    void FixedUpdate()
+    private void Update()
     {
-        DetermineInput();
+        
+    }
+
+    private void FixedUpdate()
+    {
+        input = new Vector3(-Input.GetAxis("Vertical"), 0f, Input.GetAxis("Horizontal"));
         playerMovement.Move(input);
     }
 
-    private void DetermineInput()
-    {
-        float xPos = -Input.GetAxis("Vertical");
-        float zPos = Input.GetAxis("Horizontal");
-        input = new Vector3(xPos, 0f, zPos);
-    }
 }
