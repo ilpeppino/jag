@@ -30,7 +30,7 @@ public class PlayerInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        input = new Vector3(-Input.GetAxis("Vertical"), 0f, Input.GetAxis("Horizontal"));
+        input = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         playerMovement.Move(input);
     }
 
